@@ -95,9 +95,14 @@ button:hover {
     margin-top: 1.5%;
     margin-bottom: 5%;
     margin-left: 0px;
+    border-color: #FF5A5F;
 }
 
 .amenities:hover .popover,
 .locations:hover .popover {
     visibility: visible;
+}
+
+input.amenity{
+    margin-right: 10px;
 }
