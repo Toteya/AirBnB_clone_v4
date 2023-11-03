@@ -5,7 +5,6 @@ $(document).ready(function () {
     // url: 'https://hellosalut.stefanbohacek.dev/?lang=fr',
     success: function () {
       $('DIV#api_status').addClass('available')
-      alert('YES');
     }
   });
   let amenityIds = [];
