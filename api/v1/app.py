@@ -11,7 +11,7 @@ from flasgger.utils import swag_from
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
-cors = CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 
 @app.teardown_appcontext
@@ -42,7 +42,10 @@ if __name__ == "__main__":
     """ Main Function """
     host = environ.get('HBNB_API_HOST')
     port = environ.get('HBNB_API_PORT')
+    print("PORT: {}".format(port))
+    print("HOST: {}".format(host))
     if not host:
+        print("NO HOST!!!")
         host = '0.0.0.0'
     if not port:
         port = '5000'
