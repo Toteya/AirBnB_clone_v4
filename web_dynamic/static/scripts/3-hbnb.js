@@ -61,7 +61,7 @@ $(document).ready(function () {
         // Description
         const description = $('<div></div>');
         description.addClass('description');
-        description.text(place.description);
+        description.html(place.description);
         article.append(description);
         // Add article element to section
         $('section.places').append(article);
