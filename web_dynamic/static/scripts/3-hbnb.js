@@ -38,14 +38,16 @@ $(document).ready(function () {
         titleBox.addClass('title_box');
         name.text(place.name);
         price.addClass('price_by_night');
-        price.text(place.price_by_night);
+        price.text('$' + place.price_by_night);
         titleBox.append(name, price);
         article.append(titleBox);
         // information
+        const information = $('<div></div>');
         const maxGuest = $('<div></div>');
         const numRooms = $('<div></div>');
         const numBathrooms = $('<div></div>');
         let str;
+        information.addClass('information');
         maxGuest.addClass('max_guest');
         str = place.max_guest === 1 ? 'Guest' : 'Guests';
         maxGuest.text(place.max_guest + ' ' + str);
@@ -57,7 +59,8 @@ $(document).ready(function () {
         numBathrooms.addClass('number_bathrooms');
         str = place.number_bathrooms === 1 ? 'Bathroom' : 'Bathrooms';
         numRooms.text(place.number_bathrooms + ' ' + str);
-        article.append(maxGuest, numRooms, numBathrooms);
+        information.append(maxGuest, numRooms, numBathrooms);
+        article.append(information);
         // Description
         const description = $('<div></div>');
         description.addClass('description');
